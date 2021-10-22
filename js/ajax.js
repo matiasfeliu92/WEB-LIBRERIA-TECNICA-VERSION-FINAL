@@ -80,13 +80,10 @@ const eliminarProducto = (itemId) => {
 $('#finalizar').click(() => {
     $('#carrito-contenedor').html("")
     $('.finalizarCompra').addClass('modal-active')
-    $('#contadorCarrito').html(0)
-    $('#precioTotal').html("")
 })
 
 $('.finalizarCompra').mouseover(() => {
     $('.finalizarCompra').fadeOut(5000)
     $('.modal-contenedor').removeClass('modal-active')
-        // $('#contadorCarrito').html(0)
-        // $('#precioTotal').html("")
+    location.reload()
 })
