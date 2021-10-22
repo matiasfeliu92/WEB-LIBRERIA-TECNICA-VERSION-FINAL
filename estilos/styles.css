@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    font-family: 'Bebas Neue';
+    font-weight: normal;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 40px;
+}
+
+h2 {
+    font-weight: 1000;
+    font-size: 32px;
+}
+
+h3 {
+    font-weight: 1000;
+    font-size: 25px;
+}
+
+p {
+    font-size: 25px;
+}
+
+.dark-mode {
+    background-color: rgb(87, 87, 87);
+}
+
+.fondoHeaderFooter {
+    background-color: rgb(179, 179, 179);
+}
+
+.presentacion {
+    position: fixed;
+    background-color: white;
+    left: 10%;
+    top: 30%;
+    right: 10%;
+    bottom: 30%;
+    width: 80%;
+    height: 40vh;
+    z-index: 9999;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    border-radius: 30px;
+}
+
+i {
+    font-size: 50px;
+}
+
+.textoDinamico {
+    font-family: 'Bebas Neue';
+    font-size: 50px;
+}
+
+.tituloPagina {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tituloWhite {
+    color: white;
+}
+
+img {
+    width: 70%;
+    margin-bottom: 10px;
+    border-radius: 30px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: rgb(179, 179, 179); */
+    padding: 20px 10%;
+    margin-bottom: 20px;
+}
+
+.titulo {
+    color: black;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 50px;
+    font-style: normal;
+    font-family: 'Bebas Neue';
+}
+
+.titulo:hover {
+    color: white;
+}
+
+#boton-carrito {
+    border: none;
+    color: black;
+    font-size: 40px;
+    background: transparent;
+    padding: 10px 20px;
+    transition: all .3s;
+}
+
+#boton-carrito:hover {
+    cursor: pointer;
+    color: white;
+}
+
+#boton-carrito:focus {
+    outline: none;
+}
+
+#contenedor-productos {
+    width: 100%;
+    margin: 60px auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+p {
+    line-height: 1.8;
+}
+
+.darkMode {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+.producto {
+    width: 30%;
+    height: 80vh;
+    padding: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(190, 190, 190);
+    border-radius: 30px;
+}
+
+.producto:hover {
+    background-color: rgb(130, 130, 130);
+    transition: all 0.25s ease-out;
+}
+
+.precioProducto {
+    font-weight: 700;
+}
+
+.boton-agregar {
+    color: black;
+    font-family: 'Bebas Neue';
+    font-size: 25px;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+}
+
+.boton-agregar:hover {
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 25px;
+    cursor: pointer;
+    background-color: rgb(90, 90, 90);
+}
+
+.boton-agregar:focus {
+    outline: none;
+}
+
+.modal-contenedor {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-carrito {
+    position: relative;
+    background-color: white;
+    width: 700px;
+    padding: 20px;
+    margin-top: -100%;
+    transition: all .5s;
+    border-radius: 30px;
+}
+
+.modal-active .modal-carrito {
+    margin-top: 0;
+}
+
+.modal-carrito h3 {
+    color: black;
+    padding-bottom: 5px;
+}
+
+.modal-carrito #carritoCerrar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    color: black;
+    border: none;
+    background-color: white;
+}
+
+.modal-carrito #carritoCerrar:hover {
+    cursor: pointer;
+}
+
+.modal-carrito #carritoCerrar:focus {
+    outline: none;
+}
+
+.modal-carrito .precioProducto {
+    padding-top: 10px;
+}
+
+.productoEnCarrito {
+    margin: 5px 0;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.productoEnCarrito p {
+    border-right: 1px solid black;
+    border-right: 1px solid black;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.boton-eliminar {
+    background-color: white;
+    color: black;
+    border: none;
+    font-size: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.boton-eliminar:hover {
+    cursor: pointer;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.boton-eliminar:focus {
+    outline: none;
+}
+
+.pie {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: rgb(161, 161, 161); */
+    height: 20vh;
+    width: 100%;
+}
+
+.logo__principal {
+    text-decoration: none;
+    color: black;
+}
+
+.logo__principal:hover {
+    color: white;
+}
+
+.pie em {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 1000;
+    font-family: 'Bebas Neue';
+}
+
+.pie__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pie__info em {
+    font-size: 30px;
+    font-style: normal;
+    // font-weight: 1000;
+    font-family: 'Bebas Neue';
+}
+
+
+/*MEDIA QUERIES*/
+
+@media (max-width: 425px) {
+    .producto {
+        width: 80%;
+        height: 100vh;
+        padding: 20px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background-color: rgb(190, 190, 190);
+        border-radius: 30px;
+    }
+    .boton-agregar i {
+        font-size: 30px;
+    }
+    img {
+        width: 90%;
+    }
+    .pie {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background-color: rgb(161, 161, 161);
+        height: 40vh;
+        width: 100%;
+    }
+    .presentacion {
+        height: 50vh;
+    }
+    .productoEnCarrito p {
+        font-size: 20px;
+    }
+}
