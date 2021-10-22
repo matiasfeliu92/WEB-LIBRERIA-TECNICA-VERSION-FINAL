@@ -27,7 +27,7 @@
     </header>
 
     <div class="darkMode">
-        <button class="boton-agregar">Dark Mode</button>
+        <button id="dark" class="boton-agregar">Dark Mode</button>
     </div>
 
     <div class="tituloPagina">
@@ -44,11 +44,14 @@
         <div class="modal-carrito">
             <h3>Carrito</h3>
             <button id="carritoCerrar">X</button>
-            <div id="carrito-contenedor">
-
-            </div>
+            <div id="carrito-contenedor"></div>
             <p class="precioProducto">Precio total: $<span id="precioTotal"></span></p>
+            <button id="finalizar" class="boton-agregar">FINALIZAR COMPRA</button>
         </div>
+    </div>
+
+    <div id="completarCompra" class="finalizarCompra">
+        <em class="textoDinamico">Gracias por tu compra</em>
     </div>
 
     <footer class="pie fondoHeaderFooter">

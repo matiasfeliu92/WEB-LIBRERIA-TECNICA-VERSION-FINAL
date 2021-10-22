@@ -1,6 +1,5 @@
-$('.boton-agregar').click(() => {
+$('#dark').click(() => {
     $('body').toggleClass("dark-mode")
-        // $('.tituloPagina').toggleClass("tituloWhite")
     $('header').toggleClass("fondoHeaderFooter")
     $('header').addClass("dark-mode")
     $('footer').toggleClass("fondoHeaderFooter")
