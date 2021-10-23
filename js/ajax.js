@@ -1,6 +1,7 @@
-const carrito = []
+let carrito = []
 
 let stockProductos = []
+
 
 $.getJSON("./json/stock.json", (response, success) => {
     stockProductos = response
@@ -9,9 +10,6 @@ $.getJSON("./json/stock.json", (response, success) => {
     console.log(stockProductos)
 })
 
-const productosToString = JSON.stringify(stockProductos)
-
-localStorage.setItem('productos', productosToString)
 
 const mostrarProductos = (stockProductos) => {
     $('#contenedor-productos').html("")
@@ -40,13 +38,14 @@ const agregarAlCarrito = (item) => {
 
         carrito.push({ id: producto.id, nombre: producto.nombre, precio: producto.precio, cantidad: 1 })
     }
+    localStorage.setItem('carrito', JSON.stringify(carrito))
 
     actualizarCarrito()
 }
 
 const actualizarCarrito = () => {
     $('#carrito-contenedor').html("")
-
+    carrito = JSON.parse(localStorage.getItem('carrito'));
     carrito.forEach((prod) => {
         $('#carrito-contenedor').append(
             `
@@ -62,6 +61,10 @@ const actualizarCarrito = () => {
 
     $('#contadorCarrito').html(carrito.reduce((acc, prod) => acc += prod.cantidad, 0))
     $('#precioTotal').html(carrito.reduce((acc, prod) => acc += prod.precio * prod.cantidad, 0))
+}
+
+if (localStorage.getItem('carrito')) {
+    actualizarCarrito();
 }
 
 const eliminarProducto = (itemId) => {
@@ -80,10 +83,13 @@ const eliminarProducto = (itemId) => {
 $('#finalizar').click(() => {
     $('#carrito-contenedor').html("")
     $('.finalizarCompra').addClass('modal-active')
+    localStorage.removeItem('carrito')
+    $('#contadorCarrito').html(0)
+    $('#precioTotal').html('')
 })
 
 $('.finalizarCompra').mouseover(() => {
     $('.finalizarCompra').fadeOut(5000)
     $('.modal-contenedor').removeClass('modal-active')
-    location.reload()
+        // location.reload()
 })
