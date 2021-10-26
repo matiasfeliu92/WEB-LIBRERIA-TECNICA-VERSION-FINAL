@@ -77,19 +77,19 @@ const eliminarProducto = (itemId) => {
             carrito.splice(index, 1)
         }
 
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+
     actualizarCarrito()
 }
 
-$('#finalizar').click(() => {
-    $('#carrito-contenedor').html("")
-    $('.finalizarCompra').addClass('modal-active')
-    localStorage.removeItem('carrito')
-    $('#contadorCarrito').html(0)
-    $('#precioTotal').html('')
-})
+const finalizarCompra = () => {
+    $('#finalizar').click(() => {
+        $('#carrito-contenedor').html("")
+        $('.finalizarCompra').addClass('modal-active')
+        localStorage.removeItem('carrito')
+        $('#contadorCarrito').html(0)
+        $('#precioTotal').html(0)
+    })
+}
 
-$('.finalizarCompra').mouseover(() => {
-    $('.finalizarCompra').fadeOut(5000)
-    $('.modal-contenedor').removeClass('modal-active')
-        // location.reload()
-})
+finalizarCompra()
