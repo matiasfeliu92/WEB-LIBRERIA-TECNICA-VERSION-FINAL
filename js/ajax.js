@@ -2,6 +2,7 @@ let carrito = []
 
 let stockProductos = []
 
+//PETICION DE DATOS AL JSON LOCAL, A TRAVES DE AJAX
 
 $.getJSON("./json/stock.json", (response, success) => {
     stockProductos = response
@@ -10,6 +11,7 @@ $.getJSON("./json/stock.json", (response, success) => {
     console.log(stockProductos)
 })
 
+//FUNCION PARA MOSTRAR LOS PRODUCTOS EN LA PAGINA WEB
 
 const mostrarProductos = (stockProductos) => {
     $('#contenedor-productos').html("")
@@ -25,6 +27,8 @@ const mostrarProductos = (stockProductos) => {
         `)
     })
 }
+
+//FUNCION PARA AGREGAR LOS PRODUCTOS AL CARRITO A TRAVES DEL BOTON AGREGAR
 
 const agregarAlCarrito = (item) => {
 
@@ -42,6 +46,8 @@ const agregarAlCarrito = (item) => {
 
     actualizarCarrito()
 }
+
+//FUNCION PARA QUE, A MEDIDA QUE SE AGREGAN O ELIMINAN PRODUCTOS, SE ACTUALICE EL CARRITO CON LAS CANTIDADES
 
 const actualizarCarrito = () => {
     $('#carrito-contenedor').html("")
@@ -67,6 +73,8 @@ if (localStorage.getItem('carrito')) {
     actualizarCarrito();
 }
 
+//FUNCION PARA ELIMINAR PRODUCTOS DEL CARRITO, DE A UNO
+
 const eliminarProducto = (itemId) => {
     const producto = carrito.find((prod) => prod.id === itemId)
 
@@ -81,6 +89,8 @@ const eliminarProducto = (itemId) => {
 
     actualizarCarrito()
 }
+
+//FUNCION PARA FINALIZAR LA COMPRA Y VACIAR EL CARRITO
 
 const finalizarCompra = () => {
     $('#finalizar').click(() => {
