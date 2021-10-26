@@ -95,6 +95,7 @@ const eliminarProducto = (itemId) => {
 const finalizarCompra = () => {
     $('#finalizar').click(() => {
         $('#carrito-contenedor').html("")
+        carrito.splice(0, carrito.length)
         $('.finalizarCompra').addClass('modal-active')
         localStorage.removeItem('carrito')
         $('#contadorCarrito').html(0)
