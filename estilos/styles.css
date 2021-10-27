@@ -229,7 +229,7 @@ p {
 .modal-carrito {
     position: relative;
     background-color: white;
-    width: 700px;
+    width: 70%;
     padding: 20px;
     margin-top: -100%;
     transition: all .5s;
@@ -275,8 +275,8 @@ p {
 }
 
 .productoEnCarrito p {
-    border-right: 1px solid black;
-    border-right: 1px solid black;
+    border: 1px solid black;
+    border-radius: 15px;
     padding-left: 5px;
     padding-right: 5px;
 }
@@ -292,12 +292,22 @@ p {
 
 .boton-eliminar:hover {
     cursor: pointer;
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
+    border: 1px solid black;
+    border-radius: 15px;
 }
 
 .boton-eliminar:focus {
     outline: none;
+}
+
+.finalizar {
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+
+.finalizar p {
+    font-size: 50px;
 }
 
 .pie {

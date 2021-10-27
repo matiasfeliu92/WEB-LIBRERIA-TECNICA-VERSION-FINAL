@@ -96,10 +96,12 @@ const finalizarCompra = () => {
     $('#finalizar').click(() => {
         $('#carrito-contenedor').html("")
         carrito.splice(0, carrito.length)
-        $('.finalizarCompra').addClass('modal-active')
+        $('#finalizarCompra').show()
         localStorage.removeItem('carrito')
         $('#contadorCarrito').html(0)
         $('#precioTotal').html(0)
+        $('#finalizarCompra').fadeOut(4000)
+
     })
 }
 

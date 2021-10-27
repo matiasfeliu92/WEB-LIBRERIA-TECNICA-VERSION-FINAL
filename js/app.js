@@ -17,9 +17,3 @@ $('#carritoCerrar').click(() => {
 $('.modal-carrito').click((event) => {
     event.stopPropagation()
 })
-
-$('.finalizarCompra').mouseover(() => {
-    $('.finalizarCompra').fadeOut(5000)
-    $('.modal-contenedor').removeClass('modal-active')
-        // location.reload()
-})
