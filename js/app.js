@@ -17,3 +17,8 @@ $('#carritoCerrar').click(() => {
 $('.modal-carrito').click((event) => {
     event.stopPropagation()
 })
+
+$('.cerrarPresentacion').click(() => {
+    // $('.presentacion').removeClass('modal-active')
+    $('.presentacion').css({ "display": "none" })
+})

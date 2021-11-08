@@ -60,6 +60,7 @@ const actualizarCarrito = () => {
                 <p>Precio: $${prod.precio}</p>
                 <p>Cantidad: ${prod.cantidad}</p>
                 <button onclick="eliminarProducto(${prod.id})" class="boton-eliminar">-</button>
+                <button onclick="sumarProducto(${prod.id})" class="boton-eliminar">+</button>
             </div>
              `
         )
@@ -86,6 +87,18 @@ const eliminarProducto = (itemId) => {
         }
 
     localStorage.setItem('carrito', JSON.stringify(carrito))
+
+    actualizarCarrito()
+}
+
+//FUNCION PARA SUMAR MAS CANTIDAD DE PRODUCTOS DEL CARRITO, DE A UNO
+
+const sumarProducto = (itemId) => {
+    const producto = carrito.find((prod) => prod.id === itemId)
+
+    producto.cantidad++
+
+        localStorage.setItem('carrito', JSON.stringify(carrito))
 
     actualizarCarrito()
 }

@@ -1,8 +1,9 @@
 $(document).ready(() => {
+    $('.presentacion').addClass('modal-active')
+})
 
-    $(".presentacion").css({ "background-color": "gray", "color": "black", "font-weight": "bolder" })
-        .fadeOut(10000)
-
+$('#cerrar-presentacion').click(() => {
+    $('#modal-presentacion').removeClass('modal-active')
 })
 
 $('.finalizarCompra').css({ "background-color": "gray", "color": "black", "font-weight": "bolder" })

@@ -42,7 +42,7 @@ p {
 
 .presentacion {
     position: fixed;
-    background-color: white;
+    background-color: rgb(139, 139, 139);
     left: 10%;
     top: 30%;
     right: 10%;
@@ -57,6 +57,15 @@ p {
     align-items: center;
     padding: 30px;
     border-radius: 30px;
+}
+
+.cerrarPresentacion {
+    font-family: 'Bebas Neue';
+    border: 1px solid black;
+    padding: 5px;
+    background: transparent;
+    font-size: 30px;
+    cursor: pointer;
 }
 
 .finalizarCompra {
@@ -382,6 +391,10 @@ p {
     }
     .presentacion {
         height: 50vh;
+    }
+    .productoEnCarrito {
+        display: flex;
+        flex-direction: column;
     }
     .productoEnCarrito p {
         font-size: 20px;
